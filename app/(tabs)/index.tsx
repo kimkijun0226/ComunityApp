@@ -1,47 +1,11 @@
-import { useState } from "react";
-import {
-  Button,
-  SafeAreaView,
-  StyleSheet,
-  Text,
-  TextInput,
-  View,
-} from "react-native";
+import CustomButton from "@/components/CustomButton";
+import { SafeAreaView, Text } from "react-native";
 
 export default function HomeScreen() {
-  const [text, setText] = useState("");
-
   return (
     <SafeAreaView>
-      <View style={styles.container}>
-        <Text style={styles.text}>123</Text>
-      </View>
-
-      <TextInput
-        value={text}
-        onChangeText={(value) => setText(value)}
-        style={styles.input}
-      />
-
-      <Button
-        title="버튼 이름"
-        onPress={() => {
-          console.log("pressed!");
-        }}
-      />
+      <Text>홈스크린</Text>
+      <CustomButton label="버튼" onPress={() => {}} />
     </SafeAreaView>
   );
 }
-
-const styles = StyleSheet.create({
-  container: {
-    backgroundColor: "yellow",
-  },
-  text: {
-    color: "red",
-    fontSize: 30,
-  },
-  input: {
-    fontSize: 30,
-  },
-});
