@@ -3,7 +3,7 @@ import React from "react";
 import { Pressable, PressableProps, StyleSheet, Text } from "react-native";
 
 interface CustomButtonProps extends PressableProps {
-  label: string; // 버튼 이름
+  label: string;
   size?: "medium" | "large";
   variant?: "filled";
 }

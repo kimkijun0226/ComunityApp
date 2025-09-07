@@ -1,19 +1,26 @@
 import { colors } from "@/constants";
-import { Post } from "@/types";
-import { Ionicons, MaterialCommunityIcons, Octicons } from "@expo/vector-icons";
 import React from "react";
 import { Pressable, StyleSheet, Text, View } from "react-native";
+import { Octicons, MaterialCommunityIcons, Ionicons } from "@expo/vector-icons";
+import { Post } from "@/types";
+import Profile from "./Profile";
 
 interface FeedItemProps {
   post: Post;
 }
 
 function FeedItem({ post }: FeedItemProps) {
-  const isLiked = false;
+  const isLiked = true;
 
   return (
     <View style={styles.container}>
       <View style={styles.contentContainer}>
+        <Profile
+          imageUri={post.author.imageUri}
+          nickname={post.author.nickname}
+          createdAt={post.createdAt}
+          onPress={() => {}}
+        />
         <Text style={styles.title}>{post.title}</Text>
         <Text numberOfLines={3} style={styles.description}>
           {post.description}
@@ -54,20 +61,17 @@ const styles = StyleSheet.create({
   contentContainer: {
     padding: 16,
   },
-
   title: {
     fontSize: 18,
     color: colors.BLACK,
-    fontWeight: 600,
+    fontWeight: "600",
     marginVertical: 8,
   },
-
   description: {
     fontSize: 16,
     color: colors.BLACK,
     marginBottom: 14,
   },
-
   menuContainer: {
     flexDirection: "row",
     alignItems: "center",
@@ -75,7 +79,6 @@ const styles = StyleSheet.create({
     borderTopColor: colors.GRAY_300,
     borderTopWidth: StyleSheet.hairlineWidth,
   },
-
   menu: {
     flexDirection: "row",
     alignItems: "center",
@@ -89,7 +92,7 @@ const styles = StyleSheet.create({
     color: colors.GRAY_700,
   },
   activeMenuText: {
-    fontWeight: 500,
+    fontWeight: "500",
     color: colors.ORANGE_600,
   },
 });

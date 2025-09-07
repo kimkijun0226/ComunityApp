@@ -1,18 +1,15 @@
-import { colors } from "@/constants";
 import React from "react";
 import { StyleSheet, View } from "react-native";
 import { useSafeAreaInsets } from "react-native-safe-area-context";
 import CustomButton from "./CustomButton";
+import { colors } from "@/constants";
 
 interface FixedBottomCTAProps {
   label: string;
   onPress: () => void;
 }
 
-export default function FixedBottomCTA({
-  label,
-  onPress,
-}: FixedBottomCTAProps) {
+function FixedBottomCTA({ label, onPress }: FixedBottomCTAProps) {
   const inset = useSafeAreaInsets();
 
   return (
@@ -33,3 +30,5 @@ const styles = StyleSheet.create({
     paddingHorizontal: 16,
   },
 });
+
+export default FixedBottomCTA;

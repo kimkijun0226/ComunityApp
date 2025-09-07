@@ -17,7 +17,7 @@ export default function MyLayout() {
           headerShown: false,
           title: "내 프로필",
         }}
-      ></Stack.Screen>
+      />
     </Stack>
   );
 }
